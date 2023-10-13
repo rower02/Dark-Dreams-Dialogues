@@ -1,0 +1,24 @@
+using UnityEngine;
+
+namespace Scripts.Dialogues
+{
+    public class IDialogueElement // ik it should be interface with "I[..]" name xD
+    {
+        [HideInInspector] public string content;
+        public string textIdentifier;
+        public MessageType messageType = MessageType.Neutral;
+        public Dialogue nextDialogue;
+        
+        [HideInInspector] public bool used = false;
+        
+        public AudioClip clip;
+
+        
+        public enum MessageType { Neutral, Peaceful, Aggresive }
+        
+        public virtual void PlayClip(AudioSource source)
+        {
+            
+        }
+    }
+}
